@@ -10,29 +10,39 @@ const questions = [
 
     {
         type: "input",
+        name: "github",
+        message: "Enter your GitHub username:",
+
+    },
+    {
+        type: "input",
+        name: "email",
+        message: "Enter your email address:",
+    },
+    {
+        type: "input",
         name: "title",
-        message: "What is the title of the project?",
+        message: "What is the title of your project?",
     },
     {
         type: "input",
         name: "description",
-        message: "Describe the project",
+        message: "Describe your project:",
     },
     {
         type: "input",
         name: "installation",
         message: "What dependencies are installed?",
-        default: "npm i",
     },
     {
         type: "input",
         name: "usage",
-        message: "What is the usage of this project?",
+        message: "What are the instructions for usage?",
     },
     {
         type: "input",
         name: "license",
-        message: "What license does this project have?",
+        message: "What license would you like your project to include?",
         choices: ["apache-2.0", "gpl-3.0", "ms-pl", "mit", "osl-3.0", "none"]
     },
     {
@@ -46,17 +56,7 @@ const questions = [
         message: "What command is used to run tests?",
         default: "npm run test",
     }, 
-    {
-        type: "input",
-        name: "github",
-        message: "What is your GitHub username?",
-
-    },
-    {
-        type: "input",
-        name: "email",
-        message: "What is your email?",
-    },
+    
 
 ];
 
@@ -67,7 +67,7 @@ function writeToFile(fileName, data) {
 
 // function to initialize app
 function init() {
-    inquirer.createPromptModule(questions)
+    inquirer.prompt(questions)
         .then((inquirerAnswers) => {
             console.log("Generating... Almost Complete...");
             writeToFile("./README.md", generateMarkdown({ ...inquirerAnswers }));

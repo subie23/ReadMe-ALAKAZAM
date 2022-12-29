@@ -1,0 +1,22 @@
+{
+  "name": "readme-alakazam",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/subie23/ReadMe-ALAKAZAM.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/subie23/ReadMe-ALAKAZAM/issues"
+  },
+  "homepage": "https://github.com/subie23/ReadMe-ALAKAZAM#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  }
+}
