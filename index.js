@@ -32,7 +32,7 @@ const questions = [
     {
         type: "input",
         name: "installation",
-        message: "What dependencies are installed?",
+        message: "What are the installation instructions?",
     },
     {
         type: "input",
@@ -48,31 +48,56 @@ const questions = [
     {
         type: "input",
         name: "contribution",
-        message: "Who contributed to this project?",
+        message: "Are there any contribution guidelines?",
     },
     {
         type: "input",
         name: "tests",
         message: "What command is used to run tests?",
-        default: "npm run test",
+        default: "npm test",
     }, 
     
 
 ];
 
 // function to write README file
-function writeToFile(fileName, data) {
-    return fs.writeFileSync(path.join(process.cwd(), fileName), data);
+const writeFile = fileContent => {
+    return new Promise((resolve, reject) => {
+        fs.writeFile('./Utilities/alakazamREADME.md', fileContent, err => {
+            if (err) {
+                reject(err);
+                return;
+            }
+
+            resolve({
+                ok: true,
+                message: 'File created!'
+            });
+        });
+    });
+};
+
+// function to prompt questions and store user inputs
+const init = () => {
+
+    return inquirer.prompt(questions)
+    .then(readmeData => {
+        return readmeData;
+    })
 }
 
-// function to initialize app
-function init() {
-    inquirer.prompt(questions)
-        .then((inquirerAnswers) => {
-            console.log("Generating... Almost Complete...");
-            writeToFile("./README.md", generateMarkdown({ ...inquirerAnswers }));
-        })
-}
-
-// function call to initialize app
-init();
+// Function call to initialize app
+init()
+.then(readmeData => {
+    console.log(readmeData);
+    return generateMarkdown(readmeData);
+})
+.then(pageMD => {
+    return writeFile(pageMD);
+})
+.then(writeFileResponse => {
+    console.log(writeFileResponse.message);
+})
+.catch(err => {
+    console.log(err);
+})
