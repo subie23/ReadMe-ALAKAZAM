@@ -4,7 +4,7 @@ This app will generate a README.md for the user after a few questions about the 
 
 Installation of inquirer is needed. To do this use "npm i inquirer@8.2.4".
 
-Instrutions for use:
+Instructions for use:
 - Clone this repository
 - Open in VS Code
 - Open in Itegrated Terminal
