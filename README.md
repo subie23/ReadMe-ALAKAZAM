@@ -9,7 +9,7 @@ Instructions for use:
 - Open in VS Code
 - Open in Itegrated Terminal
 - Run "npm i"
-- Run "node index.js" to initiate question
+- Run "node index.js" to initiate questions
 - When all the questions are answered a README.md file will appear under the "Utilities" folder under the name "alakazamREADME.md"
 
 Here is a screenshot of the generated README.md:
