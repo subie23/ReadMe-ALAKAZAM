@@ -11,6 +11,7 @@ https://drive.google.com/file/d/1CnpK8XykW0Wj6Vzeh56Mjjsg-D9Fxw9F/view
     -[Walkthrough Video](#walkthrough-video)
 - [User Story](#user-story)
 - [Installation](#installation)
+- [Usage](#usage)
 - [Screenshot](#screenshot)
 - [Contact](#contact)
 
@@ -23,6 +24,8 @@ The installation of `inquirer` is needed. To do this use `npm i inquirer@8.2.4`.
 - Open in VS Code
 - Open in Itegrated Terminal
 - Run `npm i`to install dependencies
+
+## Usage
 - Run `node index.js` to initiate questions
 - When all the questions are answered a README.md file will appear under the "Utilities" folder under the name "alakazamREADME.md"
 
