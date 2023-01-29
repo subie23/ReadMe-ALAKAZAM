@@ -27,7 +27,7 @@ The installation of `inquirer` is needed. To do this use `npm i inquirer@8.2.4`.
 
 ## Usage
 - Run `node index.js` to initiate questions
-- When all the questions are answered a README.md file will appear under the "Utilities" folder under the name "alakazamREADME.md"
+- When all the questions are answered a README.md file will appear under the `Utilities` folder under the name `alakazamREADME.md`
 
 ## Screenshot
 Here is a screenshot of the generated README.md:
